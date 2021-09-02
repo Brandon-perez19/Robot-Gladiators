@@ -116,7 +116,7 @@ var startGame = function() {
 
 //function to end the entire game
 var endGame = function() {
-   window.alert("The game has now ended. Let's see how you did!");
+  S window.alert("The game has now ended. Let's see how you did!");
     //if player is still alive, player wins!
     if (playerHealth > 0) {
         window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + " .")
