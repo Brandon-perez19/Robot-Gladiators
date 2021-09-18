@@ -1,7 +1,7 @@
 
 //function to generate a random numeric value
 var randomNumber = function(min, max) {
-  var value = Math.floor(Math.random()*(max-min +1) + min);
+  var value = Math.floor(Math.random()*(max-min) + min);
   return value;
 };
 
@@ -115,7 +115,7 @@ var startGame = function() {
     
 
       // pick new enemy to fight based on the index of the enemy.names array
-     var pickedEnemyObj = enemyInfo[i];
+      var pickedEnemyObj = enemyInfo[i];
 
       // reset enemy.health before starting new fight
       pickedEnemyObj.health = randomNumber(40, 60);
@@ -164,7 +164,7 @@ var endGame = function() {
   else {
     alert(playerInfo.name + " did not beat the highscore of " + highScore + ". Maybe next time!");
   }
- 
+
   //ask player if they would like to play again
   var playAgainConfirm = window.confirm("Would you like to play again?");
 
@@ -209,15 +209,14 @@ var shop = function() {
 
 //player information
 var getPlayerName = function() {
-  var name ="",
+  var name = "";
 
-  while (name===""|| name=== null) {
-    name = prompt("What is your robot's name?")
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
   }
-
-  console.console.log("Your robot's name is " + name);
-  return name
-}
+  console.log("Your robot's name is " + name);
+  return name;
+};
 
 var playerInfo = {
   name: getPlayerName(),
