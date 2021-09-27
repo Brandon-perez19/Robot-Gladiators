@@ -7,21 +7,22 @@ var randomNumber = function(min, max) {
 
 //fight function (now with parameter for enemy's object holding name, health and attack values)
 var fightOrSkip = function () {
+ 
   // ask player if they'd like to fight or run
   var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
-
+  console.log(promptFight)
   //validate prompt answer
-  if (response === ""|| response === null) {
+  if (promptFight === ""|| promptFight === null) {
     window.alert("You need to provide a valid answer! Please try again.");
     return fightOrSkip();
-  }
-    
+  } 
   //convert promptFight to all lowercase so we can check with less options
   promptFight = promptFight.toLowerCase();
   if (promptFight === "skip"){
     //confirm player wants to skip
     var confirmSkip = window.confirm("Are you sure you'd like to quit?");
-  
+    console.log(promptFight)
+
     //if yes (true), leave fight
     if (confirmSkip){
       window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
@@ -32,8 +33,19 @@ var fightOrSkip = function () {
       //return true if player wants to leave
       return true;
     }
+    return false;
   }
-  return false;
+  if (promptFight === "fight"){
+    fight
+    console.log(promptFight)
+  }
+
+  else {
+    console.log(promptFight);
+    window.alert("You need to provide a valid answer! Please try again.");
+    return fightOrSkip();
+  }
+
 };
 
 //fight function (now with parameter for enemy's object holding name, health, and attack values)
@@ -214,6 +226,7 @@ var getPlayerName = function() {
   while (name === "" || name === null) {
     name = prompt("What is your robot's name?");
   }
+
   console.log("Your robot's name is " + name);
   return name;
 };
